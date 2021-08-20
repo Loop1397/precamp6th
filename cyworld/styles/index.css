@@ -1,0 +1,183 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+/* css파일을 만들 때 가장 먼저 해줘야함.
+외곽 여백 삭제 및 박스 크기 고정 */
+
+select {
+    width: 136px;
+    height: 20px;
+
+    font-size: 5px;
+    color: #999999;
+    font-family: arial;
+}
+
+.background {
+    background-image: url('../images/background.png');
+    width: 1024px;
+    height: 600px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.outerbox {
+    background-image: url('../images/outerbox.png');
+    width: 808px;
+    height: 544px;
+    padding-left: 28px;
+    padding-top: 34px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.outerbox__top {
+    width: 808px;
+    height: 40px;
+    display: flex;
+}
+
+.title__left {
+    /*background-color: orange;*/
+    margin: 3px;
+    padding-top: 15px;
+    width : 208px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 12px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.title__right {
+    /* background-color: orangered; */
+    margin: 3px;
+    width: 524px;
+    padding-left: 30px;
+    padding-right:28px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title__right__header {
+    color: #55b2d4;
+    font-size: 19px;
+    font-weight: 500;
+}
+
+.title__right__sub {
+    
+    font-size: 13px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.wrapper__left {
+    background-color: white;
+    margin: 3px;
+    border: 1pt solid #999999;
+    border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+    width: 208px;
+    height: 428px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper__right {
+    background-color: white;
+    border: 1pt solid #999999;
+    border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+    margin: 3px;
+    width: 524px;
+    height: 428px;
+
+    z-index: 1;
+}
+
+.item__top {
+    /*background-color: aquamarine;*/
+    width: 144px;
+    height: 272px;
+    margin-top: 20px;
+}
+
+.item__bottom {
+    /*background-color: aqua;*/
+    width: 144px;
+    height: 42px;
+    margin-bottom: 20px;
+}
+
+.itemspace__top {
+    background-image: url('../images/image\ box.png');
+    height: 133px;
+}
+
+.itemspace__bottom {
+    font-size: 10px;
+    color: #999999;
+    font-family: arial;
+}
+
+.item__bottom {
+    font-size: 12px;
+    color: #999999;
+    font-family: arial;
+}
+
+.kkk {
+    color: rgb(240, 214, 145);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.navigation {
+    width: 62px;
+    height: 100px;
+    /* background-color: skyblue; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: absolute;
+    left: 784px;
+    top: 110px;
+}
+
+.navigation__item {
+    width: 60px;
+    height: 30px;
+    color: white;
+    background-color: #298EB5;
+    border: 1px solid black;
+    border-radius: 0px 10px 10px 0px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 10px;
+    
+    /* 마우스를 올리면 손가락 모양으로 바뀌게됨 */
+    cursor: pointer;
+}
+
+#menuHome {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>게임</title>
+    <link href="styles/game.css" rel="stylesheet"/>
+    <script src="javascripts/game.js"> </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__header">
+            <span class="title">GAME </span><span class="sub__title">TODAY CHOICE</span>
+        </div>
+        <div class="line"></div>
+        <div class="wrapper__word">
+            <img src="../cyworld/images/word.png" class="train">
+            <div class="title">
+                끝말잇기
+            </div>
+            <div class="content">
+                <div>
+                    제시어 : <span id = "word">코드캠프</span>
+                </div>
+            </div>
+            <div class="insert">
+                <input id = "myword" class="insert__box" type="text" placeholder="단어를 입력하세요"/>
+                <button class="b" onclick="startWord()">검색</button>
+            </div>
+            <div id="result" class="result">
+                결과 !
+            </div>
+        </div>
+        <div class="wrapper__lotto">
+            <img src="../cyworld/images/lotto.png" class="lotto">
+            <div class="title">
+                LOTTO
+            </div>
+            <div class="info">
+                버튼을 누르세요.
+            </div>
+            <div class="lotto__result">
+                <span id="lottoNumber1">3</span>
+                <span id="lottoNumber2">5</span>
+                <span id="lottoNumber3">10</span>
+                <span id="lottoNumber4">24</span>
+                <span id="lottoNumber5">30</span>
+                <span id="lottoNumber6">34</span>
+            </div>
+            <button class="b" onclick="resetNumber()">Button</button>
+        </div>
+    </div>
+</body>
+</html>

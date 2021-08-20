@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Final</title>
+    <link href="final.css" rel="stylesheet" />
+    <script>
+        const checkValidation=()=>{
+            const email = document.getElementById("input__email").value
+            const name = document.getElementById("input__name").value
+            const pwd1 = document.getElementById("input__pwd1").value
+            const pwd2 = document.getElementById("input__pwd2").value
+            const phone1 = document.getElementById("input__phone1").value
+            const phone2 = document.getElementById("input__phone2").value
+            const phone3 = document.getElementById("input__phone3").value
+
+            if(email!=="" && name!=="" && pwd1!=="" && pwd2!=="" && phone1!=="" && phone2!=="" && phone3!=="") {
+                document.getElementById("signup").style = "background-color: yellow;"
+            } else {
+                document.getElementById("signup").style = ""
+            }
+        }
+
+        const changePhone1=()=> {
+            const phone1 = document.getElementById("input__phone1").value
+            
+            if(phone1.length === 3) {
+                document.getElementById("input__phone2").focus()
+            }
+        }
+
+        const changePhone2=()=> {
+            const phone1 = document.getElementById("input__phone2").value
+            
+            if(phone1.length === 4) {
+                document.getElementById("input__phone3").focus()
+            }
+        }
+
+        const getToken=()=> {
+            let token = String(Math.floor(Math.random()*1000000)).padStart(6,"0")
+            document.getElementById("num").innerText = token
+            
+            timer = 180;
+        }
+        let timer = 0;
+
+        const myTimer = setInterval(() => {
+            if(timer >= 0) {
+                const minutes = Math.floor(timer/60)
+                const seconds = timer%60
+                // console.log(String(minutes) + ":" + String(seconds).padStart(2,"0"))
+                document.getElementById("timer").innerText = String(minutes) + ":" + String(seconds).padStart(2,"0")
+                timer -= 1
+            } else {
+                console.log("종료!")
+                // const target = document.getElementById("timer__btn")
+                // target.disabled = true;
+                document.getElementById("timer__btn").setAttribute("disabled", "false")
+                document.getElementById("timer__btn").innerText = "인증 실패"
+                clearInterval(myTimer)
+            }
+        }, 1000)
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item__top">
+            <div>회원가입</div>
+            <div>
+                <input id="input__email" type="text" placeholder="이메일을 입력해 주세요." onchange="checkValidation()" onkeyup="onchange()"/>
+            </div>
+            <div id="email__error"></div>
+            <div>
+                <input id="input__name" type="text" placeholder="이름을 입력해 주세요." onchange="checkValidation()" onkeyup="onchange()"/>
+            </div>
+            <div>
+                <input id="input__pwd1" type="password" placeholder="비밀번호를 입력해 주세요." onchange="checkValidation()" onkeyup="onchange()"/>
+            </div>
+            <div>
+                <input id="input__pwd2" type="password" placeholder="비밀번호를 다시 입력해 주세요." onchange="checkValidation()" onkeyup="onchange()"/>
+            </div>
+            <div>
+                <input id="input__phone1" type="text" size="3" onchange="changePhone1()" onkeyup="onchange()"> -
+                <input id="input__phone2" type="text" size="4" onchange="changePhone2()" onkeyup="onchange()"/> -
+                <input id="input__phone3" type="text" size="4" onchange="checkValidation()" onkeyup="onchange()"/>
+            </div>
+            <div> 
+                <span id="num">000000</span><button onclick="getToken()">인증번호전송</button>
+            </div>
+            <div>
+                <span id="timer">0:00</span><button id="timer__btn">인증확인</button>
+            </div> 
+            <select>
+                <option disabled selected>지역을 선택하세요.</option>
+                <option>서울</option>
+                <option>인천</option>
+                <option>경기</option>
+                <option>부산</option>
+                <option>강원도</option>
+                <option>경상도</option>
+                <option>전라도</option>
+                <option>충청도</option>
+            </select>
+            <div>
+                <input type="radio" name="gender"/> 여성 <input type="radio" name="gender"/> 남성 
+            </div>
+            <div>
+                <input type="checkbox"/>이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="item__bottom">
+            <button id="signup">가입하기</button>
+        </div>
+    </div>
+</body>
+</html>

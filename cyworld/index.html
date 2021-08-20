@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>싸이월드</title>
+    <link href="styles/index.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script>
+        menuHome=()=> {
+            //setAttribute 해당 블록의 속성 변경
+            document.getElementById("main").setAttribute("src", "home.html")
+            document.getElementById("menuHome").style ="color: black; background-color: white;"
+            document.getElementById("menuGame").style ="color: white; background-color: #298EB5;"
+            document.getElementById("menuJukebox").style ="color: white; background-color: #298EB5;"
+        }
+
+        menuGame=()=> {
+            document.getElementById("main").setAttribute("src", "game.html")
+            document.getElementById("menuGame").style ="color: black; background-color: white;"
+            document.getElementById("menuHome").style ="color: white; background-color: #298EB5;"
+            document.getElementById("menuJukebox").style ="color: white; background-color: #298EB5;"
+        }
+
+        menuJukebox=()=> {
+            document.getElementById("main").setAttribute("src", "jukebox.html")
+            document.getElementById("menuJukebox").style ="color: black; background-color: white;"
+            document.getElementById("menuHome").style ="color: white; background-color: #298EB5;"
+            document.getElementById("menuGame").style ="color: white; background-color: #298EB5;"
+        }
+    </script>
+</head>
+<body>
+    <div class="background">
+        <div class="outerbox">
+            <div class="outerbox__top">
+                <div class="title__left">
+                    <span>TODAY 0 | TOTAL 12345</span>
+                </div>
+                <div class="title__right">
+                    <div class="title__right__header">사람좋은 사람들, 싸이월드</div>
+                    <div class="title__right__sub">사생활보호설정</div>
+                </div>
+
+            </div>
+            <div class="outerbox__bottom">
+                <div class="wrapper">
+                    <div class="wrapper__left">
+                        <div class="item__top">
+                            <div class="itemspace__top">
+                            </div>
+                            <div class="itemspace__bottom">
+                                
+                                <br /><hr style="border: dashed 1px gray;"><br />
+                                <span><i class="fas fa-laugh"></i> 이름</span><br /><br />
+                                <span><i class="fas fa-phone"></i> Phone</span><br /><br />
+                                <span><i class="fas fa-envelope"></i> E-mail</span><br /><br />
+                                <!-- 띄어쓰기를 통해 여러개의 클래스를 동시에 줄 수 있음. (아래의 경우 fas, fa-star, kkk) -->
+                                <span><i class="fas fa-star kkk"></i> 인스타그램</span><br /><br />
+                            </div>
+                        </div>
+                        <div class="item__bottom">
+                                <span>오늘의 기분</span><br />
+                                <select>
+                                    <option>기쁨 😀</option>
+                                    <option>슬픔 😭</option>
+                                    <option>분노 😡</option>
+                                    <option>행복 😊</option>
+                                </select>
+                        </div>
+                    </div>
+                    <div class="wrapper__right">
+                        <!-- 2일차 -->
+                        <iframe id="main" src="home.html"></iframe>
+                        <!-- 3일차 -->
+                        <!-- <iframe src="game.html"></iframe> -->
+                    </div>
+                </div>
+                <!-- 4일차 -->
+                <div class="navigation">
+                    <div class="navigation__item" id="menuHome" onclick="menuHome()">
+                        홈
+                    </div>
+                    <div class="navigation__item" id="menuGame" onclick="menuGame()">
+                        게임
+                    </div>
+                    <div class="navigation__item" id="menuJukebox" onclick="menuJukebox()">
+                        쥬크박스
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

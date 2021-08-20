@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>DOM조작하기</title>
+    <!-- script 내부는 자바스크립트 -->
+    <script>
+        function aaa() {
+            // document: JS에서 HTML에 접근할 떄 쓰는 함수
+            if(document.getElementById("zzz").innerText === "안녕하세요") {
+                document.getElementById("zzz").innerText = "반갑습니다"
+            } else {
+                document.getElementById("zzz").innerText = "안녕하세요"
+            }
+        }
+
+        function counter() {
+            let temp= Number(document.getElementById("count").innerText)
+            document.getElementById("count").innerText = ++temp;
+        }
+    </script>
+</head>
+<body>
+    <div id="zzz">안녕하세요</div>
+     <!-- onclick <- 버튼이 클릭 됐을 때 ~~ 실행 -->
+    <button onclick="aaa()">버튼클릭!</button>
+
+    <div id="count">0</div>
+    <button onclick="counter()"">카운트 증가</button>
+</body>
+</html>

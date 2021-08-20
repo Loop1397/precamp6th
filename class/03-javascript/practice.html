@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>인증번호 받기</title>
+    <link href="practice.css" rel="stylesheet" />
+    <script>
+        const getToken=()=> {
+            let token = String(Math.floor(Math.random()*1000000)).padStart(6,"0")
+            document.getElementById("num").innerText = token
+            
+            timer = 180;
+        }
+
+        let timer = 0;
+
+        // function counter() {
+        //     let temp= Number(document.getElementById("count").innerText)
+        //     document.getElementById("count").innerText = ++temp;
+        // }
+
+        const myTimer = setInterval(() => {
+            if(timer >= 0) {
+                const minutes = Math.floor(timer/60)
+                const seconds = timer%60
+                // console.log(String(minutes) + ":" + String(seconds).padStart(2,"0"))
+                document.getElementById("timer").innerText = String(minutes) + ":" + String(seconds).padStart(2,"0")
+                timer -= 1
+            } else {
+                console.log("종료!")
+                // const target = document.getElementById("timer__btn")
+                // target.disabled = true;
+                document.getElementById("timer__btn").setAttribute("disabled", "false")
+                document.getElementById("timer__btn").innerText = "인증 실패"
+                clearInterval(myTimer)
+            }
+        }, 1000)
+    </script>
+    <!-- <script src="01-variable.js"> </script> -->
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__title">
+            타이머 만들기
+        </div>
+        <div class="wrapper__certification">
+            <div id="num">
+                000000
+            </div>
+            <!-- onclick <- 버튼이 클릭 됐을 때 ~~ 실행 -->
+            <button onclick="getToken()">인증번호 전송</button>
+        </div>
+        <div class="wrapper__timer">
+            <div id="timer">
+                0:00
+            </div>
+            <button id="timer__btn">인증 완료</button>
+        </div>
+    </div>
+</body>
+</html>
